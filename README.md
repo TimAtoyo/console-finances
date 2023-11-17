@@ -6,9 +6,9 @@ In this challenge, you'll be using the concepts you've learned to complete the r
 
 ## Instructions
 
-1. Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer.
+~~ Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer. ~~
 
-2. Copy the starter files in your local git repository.
+~~ Copy the starter files in your local git repository. ~~
 
 You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
 
