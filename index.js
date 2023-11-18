@@ -98,7 +98,65 @@ var columnTest1 = finances[1][0];
 
 
 
-// The total number of months included in the dataset.
 
 
-console.table(finances.length);
+// =-------------------------Calculations---------------------------
+// ========== 1. Total Months =========================================
+// The total number of months included in the dataset. 
+var totalMonths = finances.length;
+
+// ========== 2. Profit/Losses Total Amount ===========================
+// The net total amount of Profit/Losses over the entire period.
+//loop through each row 
+//take the second column add them all
+var netTotal = 0;
+
+for(let i = 0; i < finances.length; i++){
+  netTotal += finances[i][1];
+  // console.log(`total inside loop ${netTotal}`);
+}
+// ========== 3. Average of the changes in Profit/Losses ==============
+// var avgProfLoss = (netTotal / (totalMonths - 1 ))
+// console.log(avgProfLoss);
+
+
+// Loop through take 
+// Initialise a total variable var (Total = 0) 
+// 
+// Row at and column 1 (finances[i][1])
+// And also the row ant i plus 1 and column 1 (finances[i][1])
+// 
+// 
+var total = 0;
+for (let i = 0; i < finances.length -1; i++) {
+  total +=  ((finances[i + 1][1]) - (finances[i][1]) )
+}
+var averageChange = total /totalMonths -1
+
+// ========== 4. Average of the changes in Profit/Losses ==============
+// var changeInprofit = []
+// for (let i = 0; i < finances.length -1; i++) {
+//   changeInprofit.push((finances[i + 1][1]) - (finances[i][1]) )
+// }
+
+// const initialValue = 0;
+// console.log(changeInprofit.reduce ((accumulator, currentValue) => {
+//   accumulator + currentValue, initialValue
+// }));
+
+var averageChange =(finances[0][1] - finances[finances.length-1][1])/(finances.length-1)
+
+
+
+
+// Console Formatting
+console.log(
+
+`Financial Analysis
+----------------
+Total months: ${totalMonths}
+Total: £${netTotal}
+Average Change: ${averageChange.toPrecision(6)}
+Greatest Increase in Profits/Losses: 
+Greatest Decrease in Profits/Losses:`           
+);
