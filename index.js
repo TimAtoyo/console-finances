@@ -107,8 +107,8 @@ var totalMonths = finances.length;
 
 // ========== 2. Profit/Losses Total Amount ===========================
 // The net total amount of Profit/Losses over the entire period.
-//loop through each row 
-//take the second column add them all
+// loop through each row 
+// take the second column add them all
 var netTotal = 0;
 
 for(let i = 0; i < finances.length; i++){
@@ -116,40 +116,37 @@ for(let i = 0; i < finances.length; i++){
   // console.log(`total inside loop ${netTotal}`);
 }
 // ========== 3. Average of the changes in Profit/Losses ==============
-// var avgProfLoss = (netTotal / (totalMonths - 1 ))
-// console.log(avgProfLoss);
-
-
 // Loop through take 
 // Initialise a total variable var (Total = 0) 
-// 
 // Row at and column 1 (finances[i][1])
-// And also the row ant i plus 1 and column 1 (finances[i][1])
-// 
-// 
+// And also the row ant i plus 1 and column 1 (finances[i + 1][1])
+
 var total = 0;
-for (let i = 0; i < finances.length -1; i++) {
+for (let i = 0; i < finances.length - 1; i++) {
   total +=  ((finances[i + 1][1]) - (finances[i][1]) )
 }
-var averageChange = total /totalMonths -1
+var averageChange = total /(totalMonths -1)
 
 // ========== 4. Average of the changes in Profit/Losses ==============
-// var changeInprofit = []
-// for (let i = 0; i < finances.length -1; i++) {
-//   changeInprofit.push((finances[i + 1][1]) - (finances[i][1]) )
-// }
+//The greatest increase in Profit/Losses (date and amount) over the entire period.
 
-// const initialValue = 0;
-// console.log(changeInprofit.reduce ((accumulator, currentValue) => {
-//   accumulator + currentValue, initialValue
-// }));
+var totalChangesArray = [];
+var maxArray = []
+for (let i = 0; i < finances.length - 1; i++) {
+  // The inner array length 
+  var innerArrLength = finances[i].length
+  var innerArr = finances[i]
+   
+   for (let j = 0; j < innerArrLength-1; j++) {
+    // Push the change in month value and coresponding month to totalChangesArray
+    totalChangesArray.push([[finances[j+1][0]],[(finances[i + 1][1]) - (finances[i][1])]])
+    // maxArray.push()
+   console.log(Math.max(totalChangesArray[i][j]));
 
-var averageChange =(finances[0][1] - finances[finances.length-1][1])/(finances.length-1)
+   }
+}
 
 
-
-
-// Console Formatting
 console.log(
 
 `Financial Analysis
