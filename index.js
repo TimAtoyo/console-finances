@@ -86,7 +86,7 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
-
+// console.table(finances);
 
 //  The total number of months included in the dataset.
 
@@ -95,16 +95,10 @@ var columnTest = finances[0][0];
 var columnTest1 = finances[1][0];
 
 // console.table(columnTest, columnTest1);
-
-
-
-
-
 // =-------------------------Calculations---------------------------
 // ========== 1. Total Months =========================================
 // The total number of months included in the dataset. 
 var totalMonths = finances.length;
-
 // ========== 2. Profit/Losses Total Amount ===========================
 // The net total amount of Profit/Losses over the entire period.
 // loop through each row 
@@ -127,33 +121,43 @@ for (let i = 0; i < finances.length - 1; i++) {
 }
 var averageChange = total /(totalMonths -1)
 
-// ========== 4. Average of the changes in Profit/Losses ==============
+// ========== 4. Average of the changes in Profit/Losses =======================
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 
 var totalChangesArray = [];
-var maxArray = []
+var innerArray = [];
 for (let i = 0; i < finances.length - 1; i++) {
-  // The inner array length 
-  var innerArrLength = finances[i].length
-  var innerArr = finances[i]
-   
-   for (let j = 0; j < innerArrLength-1; j++) {
-    // Push the change in month value and coresponding month to totalChangesArray
-    totalChangesArray.push([[finances[j+1][0]],[(finances[i + 1][1]) - (finances[i][1])]])
-    // maxArray.push()
-   console.log(Math.max(totalChangesArray[i][j]));
-
-   }
+  totalChangesArray.push([finances[i + 1][0],(finances[i + 1][1]) - (finances[i][1])]);
+innerArray = totalChangesArray[i]
 }
 
 
-console.log(
 
+
+//* The greatest increase in Profit/Losses (date and amount) over the entire period.
+//* The greatest decrease in Profit/Losses (date and amount) over the entire period.
+var minMaxArray = [];
+var datesArray = [];
+for(let i = 0; i < totalChangesArray.length - 1; i++) {
+   datesArray.push(totalChangesArray[i][0]);
+   minMaxArray.push(totalChangesArray[i][1]);
+}
+
+//Max value & with index 
+let maxProfitVlalue = Math.max(...minMaxArray);
+let indexOfMaxValue = minMaxArray.indexOf(maxProfitVlalue);
+
+//Min value & with index 
+let minProfitVlalue = Math.min(...minMaxArray);
+let indexOfMinValue = minMaxArray.indexOf(minProfitVlalue);
+
+console.log(
 `Financial Analysis
 ----------------
 Total months: ${totalMonths}
 Total: £${netTotal}
 Average Change: ${averageChange.toPrecision(6)}
-Greatest Increase in Profits/Losses: 
-Greatest Decrease in Profits/Losses:`           
+Greatest Increase in Profits/Losses: ${datesArray[indexOfMaxValue]} (£${minMaxArray[indexOfMaxValue]})
+Greatest Decrease in Profits/Losses: ${datesArray[indexOfMinValue]} (£${minMaxArray[indexOfMinValue]})
+`           
 );
