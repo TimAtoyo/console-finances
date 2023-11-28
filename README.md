@@ -1,98 +1,53 @@
-# Unit 4 Challenge: Console Finances
+# Console-Finances
 
 ## Overview
 
-In this challenge, you'll be using the concepts you've learned to complete the required activity. This activity presents a real-world situation in which your newfound JavaScript skills will come in handy. You are tasked with creating code for analyzing the financial records of a company. You have been provided with a financial dataset in the `starter/index.js` file.
+This JavaScript project analyzes a dataset of financial records to calculate various metrics, including total months, total profit/loss, average change in profit/loss, greatest increase in profit/loss, and greatest decrease in profit/loss.
 
-## Instructions
+## Usage
 
-~~ Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer. ~~
+To run the project, follow these steps:
 
-~~ Copy the starter files in your local git repository. ~~
+- Open the `index.html` file in a web browser.
+- Open the console in your web browser.
+- The analysis results will be displayed in the console.
 
-~~ You have been given a dataset composed of arrays with two fields, Date and Profit/Losses. ~~
+## Results
 
- ~~ Your task is to write JavaScript code that analyzes the records to calculate each of the following: 
+The project outputs the following financial analysis metrics to the console:
 
-~~ * The total number of months included in the dataset. ~~
+- **Total Months:** The total number of months included in the dataset.
+- **Total:** The net total amount of Profit/Losses over the entire period.
+- **Average Change:** The average of the changes in Profit/Losses over the entire period.
+- **Greatest Increase in Profits/Losses:** The date and amount of the greatest increase in profit/loss.
+- **Greatest Decrease in Profits/Losses:** The date and amount of the greatest decrease in profit/loss.
 
-~~  The net total amount of Profit/Losses over the entire period. ~~
+### ScreenShot
+![Screenshot of Console-Finances](./assets/financeAnalysisApp.png)
 
-~~ * The average of the **changes** in Profit/Losses over the entire period. ~~
- ~~ * You will need to track what the total change in Profit/Losses are from month to month and then find the average. ~~
- ~~ * (`Total/(Number of months - 1)`) ~~
 
-* The greatest increase in Profit/Losses (date and amount) over the entire period.
+## Code Structure
 
-* The greatest decrease in Profit/Losses (date and amount) over the entire period.
+The project consists of a single HTML file (`index.html`) and a JavaScript file (`analysis.js`). The HTML file provides a way of accessing the console, while the JavaScript file contains the logic for analyzing the financial data and displaying the results to the console.
 
-When you open your code in the browser your resulting analysis should look similar to the following:
+## Technologies
 
-  ```text
-  Financial Analysis 
-  ----------------
-  Total Months: 86
-  Total: $38382578
-  Average Change: -2315.12
-  Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-  Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-  ```
+The project uses the following technologies:
 
-Your final code should print the analysis to the console.
+- HTML
+- JavaScript
 
-**Hints:**
+## Contributing
 
-* You will need to do some research on your own for this project!
+Contributions to this project are welcome. Please follow these guidelines when contributing:
 
-* Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
+- Fork the repository to your own GitHub account.
+- Create a new branch for your changes.
+- Implement your changes and add tests to ensure they work as expected.
+- Commit your changes and push them to your forked repository.
+- Open a pull request to merge your changes into the upstream repository.
 
-* How do you only print to the nearest 100th in JavaScript?
+## License
 
-## Grading Requirements
+This project is licensed under the MIT License.
 
-This homework is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Repository Quality: 23%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for variable naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 5%
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
-
----
-
-## Copyright
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
-# console-finances

@@ -86,7 +86,6 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
-// console.table(finances);
 
 //  The total number of months included in the dataset.
 
@@ -160,6 +159,7 @@ innerArray = totalChangesArray[i]
 
 var minMaxArray = [];
 var datesArray = [];
+
 for(let i = 0; i < totalChangesArray.length - 1; i++) {
    datesArray.push(totalChangesArray[i][0]);
    minMaxArray.push(totalChangesArray[i][1]);
