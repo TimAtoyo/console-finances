@@ -26,6 +26,10 @@ The project outputs the following financial analysis metrics to the console:
 ![Screenshot of Console-Finances](./assets/financeAnalysisApp.png)
 
 
+## Deployed at
+[see deployed App](https://timatoyo.github.io/console-finances/){:target="_blank"}
+
+
 ## Code Structure
 
 The project consists of a single HTML file (`index.html`) and a JavaScript file (`analysis.js`). The HTML file provides a way of accessing the console, while the JavaScript file contains the logic for analyzing the financial data and displaying the results to the console.
@@ -50,4 +54,6 @@ Contributions to this project are welcome. Please follow these guidelines when c
 ## License
 
 This project is licensed under the MIT License.
+
+
 
