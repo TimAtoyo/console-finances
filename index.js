@@ -91,29 +91,36 @@ var finances = [
 //  The total number of months included in the dataset.
 
 var columnTest = finances[0][0];
-
 var columnTest1 = finances[1][0];
 
-// console.table(columnTest, columnTest1);
-// =-------------------------Calculations---------------------------
+// -------------------------Calculations------------------------------
 // ========== 1. Total Months =========================================
 // The total number of months included in the dataset. 
+
+
 var totalMonths = finances.length;
+
+
 // ========== 2. Profit/Losses Total Amount ===========================
 // The net total amount of Profit/Losses over the entire period.
 // loop through each row 
 // take the second column add them all
+
+
 var netTotal = 0;
 
 for(let i = 0; i < finances.length; i++){
   netTotal += finances[i][1];
-  // console.log(`total inside loop ${netTotal}`);
 }
+
+
 // ========== 3. Average of the changes in Profit/Losses ==============
 // Loop through take 
 // Initialise a total variable var (Total = 0) 
 // Row at and column 1 (finances[i][1])
 // And also the row ant i plus 1 and column 1 (finances[i + 1][1])
+
+
 
 var total = 0;
 for (let i = 0; i < finances.length - 1; i++) {
@@ -121,8 +128,12 @@ for (let i = 0; i < finances.length - 1; i++) {
 }
 var averageChange = total /(totalMonths -1)
 
+
+
 // ========== 4. Average of the changes in Profit/Losses =======================
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
+
+
 
 var totalChangesArray = [];
 var innerArray = [];
@@ -133,9 +144,20 @@ innerArray = totalChangesArray[i]
 
 
 
-
+// ========== 5. & 6.The greatest increase & decrease in Profit/Losses =======
 //* The greatest increase in Profit/Losses (date and amount) over the entire period.
 //* The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+
+// This might be over complicating now that Im commenting, but after creating an array with the change in profit and 
+// the dates that match. 
+
+// Split the dates and the change in profit to one field array 
+// find the max and min values
+// use the indexOf method to get the index of the max and m min values
+// with the idexes, use them to display the dates 
+
+
 var minMaxArray = [];
 var datesArray = [];
 for(let i = 0; i < totalChangesArray.length - 1; i++) {
@@ -143,13 +165,18 @@ for(let i = 0; i < totalChangesArray.length - 1; i++) {
    minMaxArray.push(totalChangesArray[i][1]);
 }
 
+
 //Max value & with index 
 let maxProfitVlalue = Math.max(...minMaxArray);
 let indexOfMaxValue = minMaxArray.indexOf(maxProfitVlalue);
 
+
+
 //Min value & with index 
 let minProfitVlalue = Math.min(...minMaxArray);
 let indexOfMinValue = minMaxArray.indexOf(minProfitVlalue);
+
+
 
 console.log(
 `Financial Analysis
